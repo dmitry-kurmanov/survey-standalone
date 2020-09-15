@@ -19,7 +19,7 @@ export default {
 		? {
 				sourcemap: true,
 				format: 'iife',
-				name: 'app',
+				name: 'Survey',
 				file: 'public/bundle.js',
 		  }
 		: [
