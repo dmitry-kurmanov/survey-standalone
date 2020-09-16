@@ -14,10 +14,34 @@
 		<div id="surveyElement"></div>
 
 		<script>
-			window.survey = new Survey.Model({
-				target: document.body,
-				props: {},
-			});
+			var json = {
+				questions: [
+					{
+						type: 'radiogroup',
+						name: 'car',
+						title: 'What car are you driving?',
+						isRequired: true,
+						colCount: 4,
+						choices: [
+							'None',
+							'Ford',
+							'Vauxhall',
+							'Volkswagen',
+							'Nissan',
+							'Audi',
+							'Mercedes-Benz',
+							'BMW',
+							'Peugeot',
+							'Toyota',
+							'Citroen',
+						],
+					},
+				],
+			};
+
+			var targetNode = document.querySelector('#surveyElement');
+			window.survey = new Survey.Survey(json);
+			survey.render(targetNode);
 		</script>
 	</body>
 </html>

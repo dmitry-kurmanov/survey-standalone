@@ -1,5 +1,5 @@
 <script>
-  import { MyAwesomeComponent } from './components/components.module.js';
+  import { MyAwesomeComponent } from './components.module.js';
 </script>
 
 <style>
