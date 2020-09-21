@@ -14,7 +14,7 @@ const name = pkg.name
 	.replace(/-\w/g, (m) => m[1].toUpperCase());
 
 export default {
-	input: !production ? 'src/index.js' : 'src/components/components.module.js',
+	input: 'src/index.js',
 	output: !production
 		? {
 				sourcemap: true,

@@ -69,7 +69,7 @@
 		"start": "sirv public",
 		"test": "start-server-and-test dev http://localhost:5000 cy:run"
 	},
-	"svelte": "src/components/components.module.js",
+	"svelte": "src/components/Survey.svelte",
 	"version": "0.0.1",
 	"dependencies": {
 		"survey-core": "1.7.24"

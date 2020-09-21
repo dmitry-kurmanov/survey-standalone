@@ -1,5 +1,5 @@
 <script>
-  import { MyAwesomeComponent } from './components.module.js';
+  import MyAwesomeComponent from './MyAwesomeComponent.svelte';
 </script>
 
 <style>
