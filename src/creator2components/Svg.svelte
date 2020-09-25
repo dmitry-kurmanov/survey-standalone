@@ -10,8 +10,8 @@
 	<use href="#svc-icon-{iconName}" />
 </svg>
 
-<style>
-	:global(.svc-svg use) {
+<style lang="scss" global>
+	.svc-svg use {
 		fill: #909090;
 	}
 </style>

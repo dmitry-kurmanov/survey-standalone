@@ -20,8 +20,8 @@
 	];
 </script>
 
-<style>
-	:global(.svc-root) {
+<style lang="scss" global>
+	.svc-root {
 	}
 </style>
 

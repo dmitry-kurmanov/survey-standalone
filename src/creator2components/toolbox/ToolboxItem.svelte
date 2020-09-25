@@ -7,16 +7,16 @@
 	export let icon = null;
 </script>
 
-<style>
-	:global(.svc-toolbox__item:hover .svc-svg use) {
-		fill: #19b394;
+<style lang="scss" global>
+	.svc-toolbox__item {
+		&:hover .svc-svg use {
+			fill: #19b394;
+		}
 	}
 </style>
 
-<div class="{rootClass}">
-	<Svg width="{24}" height="{24}" iconName="{icon}" />
+<div class={rootClass}>
+	<Svg width={24} height={24} iconName={icon} />
 
-	<span>
-		{title}
-	</span>
+	<span> {title} </span>
 </div>

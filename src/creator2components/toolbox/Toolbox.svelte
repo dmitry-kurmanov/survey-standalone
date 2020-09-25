@@ -7,28 +7,28 @@
 	export let categoryClass = 'svc-toolbox__category';
 </script>
 
-<style>
-	:global(.svc-toolbox) {
+<style lang="scss" global>
+	.svc-toolbox {
 		width: 48px;
 	}
 
-	:global(.svc-toolbox__category) {
+	.svc-toolbox__category {
 		border-bottom: 1px solid #d6d6d6;
 		padding-bottom: 22px;
 	}
 
-	:global(.svc-toolbox__category):last-child {
+	.svc-toolbox__category:last-child {
 		border-bottom: none;
 		padding-bottom: 0;
 	}
 </style>
 
-<div class="{rootClass}">
+<div class={rootClass}>
 	{#each categories as category}
-	<div class="{categoryClass}">
-		{#each category.items as item}
-		<ToolboxItem title="{item.title}" icon="{item.icon}"></ToolboxItem>
-		{/each}
-	</div>
+		<div class={categoryClass}>
+			{#each category.items as item}
+				<ToolboxItem title={item.title} icon={item.icon} />
+			{/each}
+		</div>
 	{/each}
 </div>
