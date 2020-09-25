@@ -8,10 +8,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
 
 const production = !process.env.ROLLUP_WATCH;
-const name = pkg.name
-	.replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
-	.replace(/^\w/, (m) => m.toUpperCase())
-	.replace(/-\w/g, (m) => m[1].toUpperCase());
+const name = "Survey";
 
 export default {
 	input: 'src/index.js',
@@ -19,7 +16,7 @@ export default {
 		? {
 				sourcemap: true,
 				format: 'iife',
-				name: 'Survey',
+				name,
 				file: 'public/bundle.js',
 		  }
 		: [
@@ -48,7 +45,6 @@ export default {
 			css: (css) => {
 				css.write('public/bundle.css');
 			},
-
 			/**
 			 * Auto preprocess supported languages with
 			 * '<template>'/'external src files' support
@@ -57,6 +53,7 @@ export default {
 				postcss: true,
 				scss: { includePaths: ['src', 'node_modules'] },
 			}),
+			accessors: true,
 		}),
 
 		// If you have external dependencies installed from

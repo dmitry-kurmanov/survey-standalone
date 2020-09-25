@@ -8,6 +8,10 @@ export class Model extends Core.SurveyModel {
 		super(json);
 	}
 
+	setPropertyValueCore(propertiesHash, name, val) {
+		super.setPropertyValueCore(propertiesHash, name, val);
+	}
+
 	render(targetNode) {
 		if (!targetNode) {
 			console.warn(
@@ -18,7 +22,19 @@ export class Model extends Core.SurveyModel {
 
 		new Survey({
 			target: targetNode,
-			props: {},
+			props: {
+				model: this,
+			},
 		});
+
+		this.renderCallback = function () {
+			var counter =
+				!!self.state && !!self.state.modelChanged
+					? self.state.modelChanged
+					: 0;
+			self.setState({ modelChanged: counter + 1 });
+		};
+
+		this.onPropertyChanged.add(() => {});
 	}
 }

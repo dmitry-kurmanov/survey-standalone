@@ -1,9 +1,13 @@
 <script>
-  import MyAwesomeComponent from './MyAwesomeComponent.svelte';
+  import Creator from '../creator2components/Creator.svelte';
+
+  export let model = null;
+  export let name = 'SurveyJS standalone :)';
 </script>
 
 <style>
 
 </style>
 
-<MyAwesomeComponent name="world" />
+<div>{model && model.getAllQuestions()[0].title}</div>
+<Creator />
