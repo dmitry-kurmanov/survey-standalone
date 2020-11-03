@@ -3,6 +3,10 @@ import Survey from './components/Survey.svelte';
 
 const Core = SurveyCore.default;
 
+export const StylesManager = Core.StylesManager;
+
+StylesManager.applyTheme("modern");
+
 export class Model extends Core.SurveyModel {
 	constructor(json) {
 		super(json);
@@ -23,7 +27,7 @@ export class Model extends Core.SurveyModel {
 		new Survey({
 			target: targetNode,
 			props: {
-				model: this,
+				model: this
 			},
 		});
 
