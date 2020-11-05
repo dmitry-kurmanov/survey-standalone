@@ -28,7 +28,7 @@
 		model.onCurrentPageChanged.add(updateModel);
 		// model.onVisibleChanged.add(updateModel);
 		model.onValueChanged.add(updateModel);
-		model.onComplete.add((updateModel));
+		model.onComplete.add(updateModel);
 		model.onPartialSend.add(updateModel);
 		model.onPageVisibleChanged.add(updateModel);
 		model.onStarted.add(updateModel);
@@ -53,8 +53,10 @@
 	});
 </script>
 
-<style>
-	.sv_main :global(.sjs-hide) {
+<style lang="scss">
+	@import '../node_modules/survey-core/modern';
+
+	:global(.sjs-hide) {
 		display: none;
 	}
 </style>

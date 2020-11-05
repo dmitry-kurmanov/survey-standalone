@@ -8,7 +8,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
 
 const production = !process.env.ROLLUP_WATCH;
-const name = "Survey";
+const name = 'Survey';
 
 export default {
 	input: 'src/index.js',
@@ -17,7 +17,7 @@ export default {
 				sourcemap: true,
 				format: 'iife',
 				name,
-				file: 'public/bundle.js',
+				file: 'public/survey-standalone.js',
 		  }
 		: [
 				{
@@ -43,7 +43,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: (css) => {
-				css.write('public/bundle.css');
+				css.write('public/survey-standalone.css');
 			},
 			/**
 			 * Auto preprocess supported languages with

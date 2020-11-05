@@ -1,7 +1,7 @@
 .DS_Store
 **/dist/**
 **/node_modules/**
-**/public/bundle.*
+**/public/survey-standalone.*
 
 cypress/videos
 cypress/screenshots
