@@ -103,11 +103,7 @@
 				<TimerPanel {model} />
 			{/if}
 
-			<SurveyPage
-				id={model.currentPage.id}
-				{model}
-				page={model.currentPage}
-				{css} />
+			<SurveyPage {model} page={model.currentPage} {css} />
 
 			{#if model.isTimerPanelShowingOnBottom}
 				<TimerPanel {model} />
