@@ -4,9 +4,8 @@
 	import SurveyString from './String.svelte';
 	import SurveyErrors from './Errors.svelte';
 	import OtherChoice from './OtherChoice.svelte';
-	import { getIndentSize } from '../utils.js';
+	import { getIndentSize, getComponentByName } from '../utils.js';
 
-	import radiogroup from './Radiogroup.svelte';
 	import customwidget from './CustomWidget.svelte';
 
 	export let element = null;
@@ -21,16 +20,13 @@
 
 	$: dynamicComponent = element.customWidget
 		? customwidget
-		: components[element.getTemplate()];
+		: getComponentByName(element.getTemplate());
 
 	$: questionRootClass =
 		model.questionTitleLocation === 'left'
 			? css.question.mainRoot + ' sv_qstn_left'
 			: css.question.mainRoot;
 
-	const components = {
-		radiogroup,
-	};
 	let domNode = null;
 
 	onMount(() => {

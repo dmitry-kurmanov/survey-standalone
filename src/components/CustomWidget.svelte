@@ -1,15 +1,12 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import radiogroup from './Radiogroup.svelte';
+	import { getComponentByName } from '../utils.js';
 
 	export let element = null;
 	export let css = null;
 
-	$: dynamicComponent = components[element.getTemplate()];
+	$: dynamicComponent = getComponentByName(element.getTemplate());
 
-	const components = {
-		radiogroup,
-	};
 	let domNode = null;
 
 	onMount(() => {
