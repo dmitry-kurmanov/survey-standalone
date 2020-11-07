@@ -1,19 +1,19 @@
 <script>
 	import { getMaxLength } from '../utils.js';
 
-	export let question = null;
+	export let element = null;
 	export let commentClass = '';
 </script>
 
 <div class="form-group">
-	{#if !question.isReadOnly}
+	{#if !element.isReadOnly}
 		<input
 			type="text"
-			class={question.cssClasses.other || commentClass}
-			bind:value={question.comment}
-			maxlength={getMaxLength(question.getOthersMaxLength())}
-			aria-label={question.locTitle.renderedHtml} />
+			class={element.cssClasses.other || commentClass}
+			bind:value={element.comment}
+			maxlength={getMaxLength(element.getOthersMaxLength())}
+			aria-label={element.locTitle.renderedHtml} />
 	{:else}
-		<div class={question.cssClasses.other}>{question.comment}</div>
+		<div class={element.cssClasses.other}>{element.comment}</div>
 	{/if}
 </div>

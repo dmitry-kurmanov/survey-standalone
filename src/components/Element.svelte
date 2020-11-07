@@ -12,7 +12,6 @@
 	export let element = null;
 	export let model = null;
 	export let css = null;
-	export let domNode = null;
 
 	$: hasErrorsOnTop =
 		!element.isPanel && model.questionErrorLocation === 'top';
@@ -32,6 +31,21 @@
 	const components = {
 		radiogroup,
 	};
+	let domNode = null;
+
+	onMount(() => {
+		if (model && !element.isPanel) {
+			model.afterRenderQuestion(element, domNode);
+		}
+	});
+	afterUpdate(() => {
+		addCoreTwoWayBinding(element, () => {
+			element = Object.assign({}, element);
+		});
+	});
+	onDestroy(() => {
+		removeCoreTwoWayBinding(element);
+	});
 
 	function addCoreTwoWayBinding(element, handler) {
 		if (!element) return;
@@ -69,10 +83,6 @@
 		element.setPropertyValueCoreHandler = undefined;
 		element.visibleRowsChangedCallback = null;
 	}
-
-	onMount(() => {});
-	afterUpdate(() => {});
-	onDestroy(() => {});
 </script>
 
 <div
@@ -97,20 +107,20 @@
 
 	<div class={element.hasTitleOnLeft ? 'content-left' : ''}>
 		{#if hasErrorsOnTop}
-			<SurveyErrors question={element} />
+			<SurveyErrors {element} />
 		{/if}
 
-		<svelte:component this={dynamicComponent} question={element} {css} />
+		<svelte:component this={dynamicComponent} {element} {css} />
 
 		{#if element.hasComment}
 			<div>
 				<div>{element.commentText}</div>
-				<OtherChoice commentClass={css.comment} question={element} />
+				<OtherChoice commentClass={css.comment} {element} />
 			</div>
 		{/if}
 
 		{#if hasErrorsOnBottom}
-			<SurveyErrors question={element} />
+			<SurveyErrors {element} />
 		{/if}
 
 		{#if element.hasTitleOnBottom}
