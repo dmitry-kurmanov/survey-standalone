@@ -21,7 +21,7 @@
 			Survey.StylesManager.applyTheme('modern');
 
 			var json = {
-				title: 'Survey standalone example',
+				title: 'Survey standalone example !',
 				pages: [
 					{
 						questions: [
@@ -49,8 +49,23 @@
 					{
 						questions: [
 							{
-								type: 'text',
-								name: 'qtext',
+								type: 'radiogroup',
+								name: 'car2',
+								title: 'What car are you driving 2?',
+								colCount: 4,
+								choices: [
+									'None',
+									'Ford',
+									'Vauxhall',
+									'Volkswagen',
+									'Nissan',
+									'Audi',
+									'Mercedes-Benz',
+									'BMW',
+									'Peugeot',
+									'Toyota',
+									'Citroen',
+								],
 							},
 						],
 					},

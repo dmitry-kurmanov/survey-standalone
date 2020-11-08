@@ -3,6 +3,7 @@
 	import OtherChoice from './OtherChoice.svelte';
 
 	export let element = null;
+	export let css = null;
 
 	$: choicesCount = element.visibleChoices.length - 1;
 

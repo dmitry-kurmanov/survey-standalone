@@ -35,7 +35,7 @@
 		model.onTimer.add(updateModel);
 
 		model.renderCallback = () => {
-			model = Object.assign({}, model);
+			model = model;
 		};
 	});
 

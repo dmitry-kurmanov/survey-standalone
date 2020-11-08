@@ -36,7 +36,7 @@
 	});
 	afterUpdate(() => {
 		addCoreTwoWayBinding(element, () => {
-			element = Object.assign({}, element);
+			element = element;
 		});
 	});
 	onDestroy(() => {
