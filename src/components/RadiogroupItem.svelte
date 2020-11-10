@@ -39,7 +39,6 @@
 			</span>
 		{/if}
 	</label>
-	<OtherChoice {element} />
 	{#if item.value == element.otherItem.value}
 		<div
 			class:sjs-hide={!element.hasOther || !element.renderedValue || !element.isOtherSelected}>

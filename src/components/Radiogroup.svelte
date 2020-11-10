@@ -1,64 +1,47 @@
 <script>
-	import SurveyString from './String.svelte';
-	import OtherChoice from './OtherChoice.svelte';
-
+	import RadiogroupItem from './RadiogroupItem.svelte';
 	export let element = null;
 	export let css = null;
 
-	$: choicesCount = element.visibleChoices.length - 1;
-
-	function doClear() {
-		element.clearValue();
-	}
-	function setValue(newValue) {
-		element.value = newValue;
-	}
 	function getItemClass(item) {
-		var itemClass =
-			element.cssClasses.item +
-			(element.colCount === 0
-				? ' sv_q_radiogroup_inline'
-				: ' sv-q-col-' + element.colCount);
-		if (item.value === element.value) itemClass += ' checked';
-		return itemClass;
+		return element.getItemClass(item);
 	}
 </script>
 
 <fieldset class={element.cssClasses.root}>
 	<legend aria-label={element.locTitle.renderedHtml} />
-	{#each element.visibleChoices as item, index}
-		<div class={getItemClass(item)}>
-			<label class={element.cssClasses.label}>
-				<input
-					type="radio"
-					name={element.name + '_' + element.id}
-					value={item.value}
-					on:change={setValue(this.value)}
-					id={element.inputId}
-					disabled={element.isReadOnly}
-					aria-label={item.locText.renderedHtml}
-					checked={element.value === item.value}
-					class={element.cssClasses.itemControl} />
-				<span class={element.cssClasses.materialDecorator} />
-				<span class="check" />
-				<span class={element.cssClasses.controlLabel}>
-					<SurveyString locString={item.locText} />
-				</span>
-				{#if index == choicesCount}
-					<div
-						class:sjs-hide={!element.hasOther || !element.isOtherSelected}>
-						<OtherChoice {element} />
-					</div>
-				{/if}
-			</label>
-		</div>
-	{/each}
-	{#if element.showClearButton}
+	{#if !element.hasColumns}
+		{#each element.visibleChoices as item, index (item.value)}
+			<RadiogroupItem
+				key={item.value}
+				class={getItemClass(item)}
+				{element}
+				{item}
+				{index} />
+		{/each}
+	{/if}
+
+	{#if element.hasColumns}
+		{#each element.columns as column, colIndex}
+			<div class={element.getColumnClass()}>
+				{#each column as item, index (item.value)}
+					<RadiogroupItem
+						key={item.value}
+						class={getItemClass(item)}
+						{element}
+						{item}
+						index={'' + colIndex + index} />
+				{/each}
+			</div>
+		{/each}
+	{/if}
+
+	{#if element.canShowClearButton}
 		<div>
 			<input
 				type="button"
 				class={element.cssClasses.clearButton}
-				on:click={doClear()}
+				on:click={element.clearValue()}
 				value={element.clearButtonCaption} />
 		</div>
 	{/if}
