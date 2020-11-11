@@ -1,4 +1,4 @@
-import radiogroup from './components/Radiogroup.svelte';
+import radiogroup from './components/elements/Radiogroup.svelte';
 
 export const getIndentSize = (question, indent) => {
 	if (indent < 1 || !question.survey) return '';

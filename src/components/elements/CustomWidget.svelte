@@ -1,6 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import { getComponentByName } from '../utils.js';
+	import { getComponentByName } from '../../utils.js';
 
 	export let element = null;
 	export let css = null;

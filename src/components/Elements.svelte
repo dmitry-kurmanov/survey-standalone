@@ -6,7 +6,7 @@
 	import OtherChoice from './OtherChoice.svelte';
 	import { getIndentSize, getComponentByName } from '../utils.js';
 
-	import customwidget from './CustomWidget.svelte';
+	import customwidget from './elements/CustomWidget.svelte';
 
 	export let element = null;
 	export let model = null;

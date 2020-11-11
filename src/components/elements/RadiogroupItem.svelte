@@ -1,6 +1,6 @@
 <script>
-	import SurveyString from './String.svelte';
-	import OtherChoice from './OtherChoice.svelte';
+	import SurveyString from '../String.svelte';
+	import OtherChoice from '../OtherChoice.svelte';
 
 	export let element = null;
 	export let index = '';
@@ -9,14 +9,18 @@
 
 	$: labelClass = element.getLabelClass(item);
 	$: controlLabelClass = element.getControlLabelClass(item);
+
+	function getItemClass(item) {
+		return element.getItemClass(item);
+	}
 </script>
 
-<div>
+<div class={getItemClass(item)}>
 	<label class={labelClass}>
 		<input
 			type="radio"
 			name={element.name + '_' + element.id}
-			value={item.value}
+			bind:value={item.value}
 			checked={element.renderedValue}
 			id={element.inputId + '_' + index}
 			role="radio"

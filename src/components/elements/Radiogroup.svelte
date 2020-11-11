@@ -2,10 +2,6 @@
 	import RadiogroupItem from './RadiogroupItem.svelte';
 	export let element = null;
 	export let css = null;
-
-	function getItemClass(item) {
-		return element.getItemClass(item);
-	}
 </script>
 
 <fieldset class={element.cssClasses.root}>
@@ -13,8 +9,6 @@
 	{#if !element.hasColumns}
 		{#each element.visibleChoices as item, index (item.value)}
 			<RadiogroupItem
-				key={item.value}
-				class={getItemClass(item)}
 				{element}
 				{item}
 				{index} />
@@ -26,8 +20,6 @@
 			<div class={element.getColumnClass()}>
 				{#each column as item, index (item.value)}
 					<RadiogroupItem
-						key={item.value}
-						class={getItemClass(item)}
 						{element}
 						{item}
 						index={'' + colIndex + index} />
