@@ -1,5 +1,5 @@
 <script>
-	import SurveyElements from './Elements.svelte';
+	import SurveyElement from '../Element.svelte';
 
 	export let row = null;
 	export let model = null;
@@ -9,7 +9,7 @@
 <div>
 	{#each row.elements as element (element.id)}
 		{#if element.visible}
-			<SurveyElements {element} {model} {css} />
+			<SurveyElement {element} {model} {css} />
 		{/if}
 	{/each}
 </div>

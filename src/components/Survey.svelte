@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	import Header from './Header.svelte';
-	import SurveyString from './String.svelte';
+	import NavigationButton from './NavigationButton.svelte';
 	import Progress from './Progress.svelte';
 	import TimerPanel from './TimerPanel.svelte';
 	import SurveyPage from './Page.svelte';
@@ -69,29 +69,27 @@
 		{/if}
 
 		<div class={css.container}>
-			<Header {model}/>
+			<Header {model} />
 
 			{#if model.state === 'starting'}
 				<div class={css.body}>
+					{#if model.isNavigationButtonsShowing === 'top' || model.isNavigationButtonsShowing === 'both'}
+						<NavigationButton {css} {model} />
+					{/if}
+
 					<SurveyPage
 						id={model.startedPage.id}
 						survey={model}
 						page={model.startedPage}
 						{css} />
 
-					{#if model.isNavigationButtonsShowing}
-						<div class={css.footer}>
-							<input
-								type="button"
-								value={model.startSurveyText}
-								class={getNavBtnClasses(css, 'start')}
-								on:click={model.start()} />
-						</div>
+					{#if model.isNavigationButtonsShowing === 'bottom' || model.isNavigationButtonsShowing === 'both'}
+						<NavigationButton {css} {model} />
 					{/if}
 				</div>
 			{/if}
 
-			{#if model.state === 'running'}
+			{#if model.state === 'running' || survey.state === 'preview'}
 				<div class={css.body}>
 					{#if model.isShowProgressBarOnTop}
 						<Progress {model} {css} />

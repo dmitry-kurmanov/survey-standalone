@@ -7,11 +7,6 @@ export const getIndentSize = (question, indent) => {
 	return indent * css.question.indent + 'px';
 };
 
-export const getMaxLength = (maxLengthValue) => {
-	if (maxLengthValue === null) return 524288;
-	return maxLengthValue;
-};
-
 export const getValue = (oldValue) => {
 	return oldValue || '';
 };
