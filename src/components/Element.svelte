@@ -2,7 +2,7 @@
 	import { onMount, afterUpdate, onDestroy } from 'svelte';
 
 	import SurveyString from './String.svelte';
-	import SurveyHeader from './';
+	import ElementHeader from './ElementHeader.svelte';
 	import SurveyErrors from './Errors.svelte';
 	import OtherChoice from './OtherChoice.svelte';
 	import { getComponentByName } from '../utils.js';
@@ -95,7 +95,7 @@
 	aria-labelledby={element.hasTitle ? element.ariaTitleId : null}
 	style="paddingLeft: {element.paddingLeft}, paddingRight: {element.paddingRight}, flexBasis: {element.renderWidth}, flexGrow: 1, flexShrink: 1, width: {element.renderWidth}, minWidth: {element.minWidth}, maxWidth: {element.maxWidth}, display: 'inline-block' ">
 	{#if element.hasTitleOnLeftTop}
-		<SurveyHeader {element} />
+		<ElementHeader {element} />
 	{/if}
 
 	<div class={element.cssContent}>
@@ -124,6 +124,6 @@
 	</div>
 
 	{#if element.hasTitleOnBottom}
-		<SurveyHeader {element} />
+		<ElementHeader {element} />
 	{/if}
 </div>

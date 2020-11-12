@@ -12,7 +12,7 @@
 	}
 </script>
 
-<div class={headerClass} on:click={onClick()}>
+<div class={headerClass} on:click={onClick}>
 	{#if element.hasTitle}
 		<h5
 			class={titleClass}

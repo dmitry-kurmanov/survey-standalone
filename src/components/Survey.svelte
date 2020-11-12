@@ -89,7 +89,7 @@
 				</div>
 			{/if}
 
-			{#if model.state === 'running' || survey.state === 'preview'}
+			{#if model.state === 'running' || model.state === 'preview'}
 				<div class={css.body}>
 					{#if model.isShowProgressBarOnTop}
 						<Progress {model} {css} />
