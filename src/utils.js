@@ -1,16 +1,5 @@
 import radiogroup from './components/elements/Radiogroup.svelte';
 
-export const getIndentSize = (question, indent) => {
-	if (indent < 1 || !question.survey) return '';
-	const css = question.survey['css'];
-	if (!css) return '';
-	return indent * css.question.indent + 'px';
-};
-
-export const getValue = (oldValue) => {
-	return oldValue || '';
-};
-
 const components = {
 	radiogroup,
 };
