@@ -81,11 +81,21 @@
 	}
 </script>
 
+<survey-element
+
+:
+:
+:
+/>
+
 <div
 	bind:this={domNode}
 	class={questionRootClass}
 	id={element.id}
-	style="padding-left: {getIndentSize(element, element.indent)}; padding-right: {getIndentSize(element, element.rightIndent)}; width: {element.renderWidth}">
+	name={element.name}
+	role={element.ariaRole}
+	aria-labelledby={element.hasTitle ? element.ariaTitleId : null}
+	style={paddingLeft: element.paddingLeft, paddingRight: element.paddingRight, flexBasis: element.renderWidth, flexGrow: 1, flexShrink: 1, width: element.renderWidth, minWidth: element.minWidth, maxWidth: element.maxWidth, display: 'inline-block' }>
 	{#if element.hasTitleOnLeftTop}
 		<div class={element.hasTitleOnLeft ? 'title-left' : ''}>
 			{#if element.hasTitle}

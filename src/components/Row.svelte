@@ -7,8 +7,8 @@
 </script>
 
 <div>
-	{#each row.elements as element (element.id)}
-		{#if element.visible}
+	{#each row.elements as element (element.idValue)}
+		{#if row.isNeedRender && element.visible}
 			<SurveyElement {element} {model} {css} />
 		{/if}
 	{/each}
