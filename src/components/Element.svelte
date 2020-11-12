@@ -103,7 +103,7 @@
 
 	<div class={element.hasTitleOnLeft ? 'content-left' : ''}>
 		{#if hasErrorsOnTop}
-			<SurveyErrors {element} />
+			<SurveyErrors {element} location="top" />
 		{/if}
 
 		<svelte:component this={dynamicComponent} {element} {css} />
@@ -116,7 +116,7 @@
 		{/if}
 
 		{#if hasErrorsOnBottom}
-			<SurveyErrors {element} />
+			<SurveyErrors {element} location="bottom" />
 		{/if}
 
 		{#if element.hasTitleOnBottom}

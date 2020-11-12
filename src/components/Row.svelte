@@ -1,5 +1,5 @@
 <script>
-	import SurveyElement from '../Element.svelte';
+	import SurveyElement from './Element.svelte';
 
 	export let row = null;
 	export let model = null;

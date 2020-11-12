@@ -2,16 +2,31 @@
 	import SurveyString from './string.svelte';
 
 	export let element = null;
+	export let location = '';
 
-	$: classes = element.cssClasses
-		? element.cssClasses.error.root
-		: 'panel-error-root';
+	function getClasses(element) {
+		let classes = element.cssClasses
+			? element.cssClasses.error.root
+			: 'panel-error-root';
+
+		let additionalClasses = '';
+
+		if (location === 'top') {
+			additionalClasses = element.cssClasses.error.locationTop;
+		} else if (location === 'bottom') {
+			additionalClasses = element.cssClasses.error.locationBottom;
+		}
+
+		if (additionalClasses) classes += ' ' + additionalClasses;
+
+		return classes;
+	}
 </script>
 
 <div
 	role="alert"
 	class:sjs-hide={!element.errors || element.errors.length === 0}
-	class={classes}>
+	class={getClasses(element)}>
 	{#each element.errors as error}
 		<div>
 			<span
