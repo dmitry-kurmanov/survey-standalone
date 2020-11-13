@@ -6,19 +6,24 @@
 	export let page = null;
 	export let css = null;
 
-	$: hasTitle = model.showPageTitles && !!page.title;
 	$: hasDescription = !!page.description;
 	$: rows = page.rows;
 </script>
 
-<div class={css.page.root}>
-	<h4 class:sjs-hide={!hasTitle} class={css.pageTitle}>
-		<SurveyString locString={page.locTitle} />
-	</h4>
-	<div class:sjs-hide={!hasDescription} class={css.pageDescription}>
-		<SurveyString locString={page.locDescription} />
-	</div>
-	{#each rows as row}
+<div class={page.cssClasses.page.root}>
+	{#if page._showTitle}
+		<h4 class={page.cssClasses.page.title}>
+			<SurveyString locString={page.locTitle} />
+		</h4>
+	{/if}
+
+	{#if page._showDescription}
+		<div class={page.cssClasses.page.description}>
+			<SurveyString locString={page.locDescription} />
+		</div>
+	{/if}
+
+	{#each rows as row, index (page.id + '_' + index)}
 		{#if row.visible}
 			<div class={css.row}>
 				<SurveyRow {row} {model} {css} />
