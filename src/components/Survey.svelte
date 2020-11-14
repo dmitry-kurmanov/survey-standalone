@@ -2,7 +2,8 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	import Header from './Header.svelte';
-	import NavigationButton from './NavigationButton.svelte';
+	import Navigation from './Navigation.svelte';
+	import NavigationStartButton from './NavigationStartButton.svelte';
 	import Progress from './Progress.svelte';
 	import TimerPanel from './TimerPanel.svelte';
 	import SurveyPage from './Page.svelte';
@@ -74,7 +75,7 @@
 			{#if model.state === 'starting'}
 				<div class={css.body}>
 					{#if model.isNavigationButtonsShowing === 'top' || model.isNavigationButtonsShowing === 'both'}
-						<NavigationButton {css} {model} />
+						<NavigationStartButton {css} {model} />
 					{/if}
 
 					<SurveyPage
@@ -84,7 +85,7 @@
 						{css} />
 
 					{#if model.isNavigationButtonsShowing === 'bottom' || model.isNavigationButtonsShowing === 'both'}
-						<NavigationButton {css} {model} />
+						<NavigationStartButton {css} {model} />
 					{/if}
 				</div>
 			{/if}
@@ -99,42 +100,22 @@
 						<TimerPanel {model} />
 					{/if}
 
+					{#if model.isNavigationButtonsShowing === 'top' || model.isNavigationButtonsShowing === 'both'}
+						<Navigation {model} {css} />
+					{/if}
+
 					<SurveyPage {model} page={model.currentPage} {css} />
 
 					{#if model.isTimerPanelShowingOnBottom}
 						<TimerPanel {model} />
 					{/if}
 
-					{#if model.isShowProgressBarOnBottom}
-						<div style="margin-top: 1em">
-							<Progress {model} {css} />
-						</div>
+					{#if model.isNavigationButtonsShowing === 'bottom' || model.isNavigationButtonsShowing === 'both'}
+						<Progress {model} {css} />
 					{/if}
 
-					{#if model.isNavigationButtonsShowing}
-						<div class={css.footer}>
-							<input
-								type="button"
-								class:sjs-hide={model.isFirstPage || !model.isShowPrevButton}
-								value={model.pagePrevText}
-								class={getNavBtnClasses(css, 'prev')}
-								on:click={model.prevPage()} />
-							<input
-								type="button"
-								class:sjs-hide={model.isLastPage}
-								value={model.pageNextText}
-								class={getNavBtnClasses(css, 'next')}
-								on:click={model.nextPage()} />
-
-							{#if model.isEditMode}
-								<input
-									type="button"
-									class:sjs-hide={!model.isLastPage}
-									value={model.completeText}
-									class={getNavBtnClasses(css, 'complete')}
-									on:click={model.completeLastPage()} />
-							{/if}
-						</div>
+					{#if model.isNavigationButtonsShowing === 'bottom' || model.isNavigationButtonsShowing === 'both'}
+						<Navigation {model} {css} />
 					{/if}
 				</div>
 			{/if}
@@ -154,7 +135,7 @@
 									<input
 										type="button"
 										value={model.getLocString('saveAgainButton')}
-										on:click={model.doComplete()}
+										on:click={model.doComplete}
 										class={css.saveData.saveAgainButton} />
 								{/if}
 							</div>
@@ -176,7 +157,7 @@
 			{/if}
 
 			{#if model.state === 'empty'}
-				<div class={css.body}>
+				<div class={css.bodyEmpty}>
 					{@html model.emptySurveyText}
 				</div>
 			{/if}
