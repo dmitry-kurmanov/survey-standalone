@@ -9,5 +9,5 @@
 		src={model.locLogo.renderedHtml}
 		width={model.logoWidth ? model.logoWidth + 'px' : undefined}
 		height={model.logoHeight ? model.logoHeight + 'px' : undefined}
-		style={{ objectFit: model.logoFit }} />
+		style="object-fit:{model.logoFit}" />
 </div>

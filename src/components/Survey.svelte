@@ -110,7 +110,7 @@
 						<TimerPanel {model} />
 					{/if}
 
-					{#if model.isNavigationButtonsShowing === 'bottom' || model.isNavigationButtonsShowing === 'both'}
+					{#if model.isShowProgressBarOnBottom}
 						<Progress {model} {css} />
 					{/if}
 

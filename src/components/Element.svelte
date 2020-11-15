@@ -92,8 +92,8 @@
 	id={element.id}
 	name={element.name}
 	role={element.ariaRole}
-	aria-labelledby={element.hasTitle ? element.ariaTitleId : null}
-	style="paddingLeft: {element.paddingLeft}, paddingRight: {element.paddingRight}, flexBasis: {element.renderWidth}, flexGrow: 1, flexShrink: 1, width: {element.renderWidth}, minWidth: {element.minWidth}, maxWidth: {element.maxWidth}, display: 'inline-block' ">
+	style="display: inline-block; padding-left: {element.paddingLeft}; padding-right: {element.paddingRight}; flex-basis: {element.renderWidth}; flex-grow: 1; flex-shrink: 1; width: {element.renderWidth}; min-width: {element.minWidth}; max-width: {element.maxWidth};"
+	aria-labelledby={element.hasTitle ? element.ariaTitleId : null}>
 	{#if element.hasTitleOnLeftTop}
 		<ElementHeader {element} />
 	{/if}
