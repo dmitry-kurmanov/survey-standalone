@@ -20,8 +20,8 @@
 		<input
 			type="radio"
 			name={element.name + '_' + element.id}
-			bind:value={item.value}
-			checked={element.renderedValue}
+			value={item.value}
+			bind:group={element.renderedValue}
 			id={element.inputId + '_' + index}
 			role="radio"
 			disabled={element.isReadOnly || !item.isEnabled}
