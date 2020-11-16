@@ -14,6 +14,22 @@
 		mouseDownPage = model.currentPage;
 		return model.navigationMouseDown();
 	}
+
+	function navigationMouseDown() {
+		model.navigationMouseDown();
+	}
+
+	function prevPage() {
+		model.prevPage();
+	}
+
+	function showPreview() {
+		model.showPreview();
+	}
+
+	function completeLastPage() {
+		model.completeLastPage();
+	}
 </script>
 
 <div class={css.footer}>
@@ -22,8 +38,8 @@
 		class:sjs-hide={model.isFirstPage || !model.isShowPrevButton}
 		value={model.pagePrevText}
 		class={model.cssNavigationPrev}
-		on:mousedown={model.navigationMouseDown}
-		on:click={model.prevPage} />
+		on:mousedown={navigationMouseDown}
+		on:click={prevPage} />
 	<input
 		type="button"
 		class:sjs-hide={model.isLastPage}
@@ -38,8 +54,8 @@
 			class:sjs-hide={!model.isLastPage}
 			value={model.previewText}
 			class={model.cssNavigationPreview}
-			on:mousedown={model.navigationMouseDown}
-			on:click={model.showPreview} />
+			on:mousedown={navigationMouseDown}
+			on:click={showPreview} />
 	{/if}
 
 	{#if model.isCompleteButtonVisible}
@@ -48,7 +64,7 @@
 			class:sjs-hide={!model.isLastPage}
 			value={model.completeText}
 			class={model.cssNavigationComplete}
-			on:mousedown={model.navigationMouseDown}
-			on:click={model.completeLastPage} />
+			on:mousedown={navigationMouseDown}
+			on:click={completeLastPage} />
 	{/if}
 </div>

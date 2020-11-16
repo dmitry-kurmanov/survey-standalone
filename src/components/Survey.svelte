@@ -10,7 +10,6 @@
 
 	export let model = null;
 
-	$: hasTitle = model.showTitle && model.title;
 	$: hasCompletedPage =
 		model.showCompletedPage && model.state === 'completed';
 
@@ -18,12 +17,12 @@
 	const completedPageClasses = css.body + ' ' + css.completedPage;
 	const completedStateClasses = css.saveData[model.completedState];
 
-	function getNavBtnClasses(css, btnType) {
-		return (css.navigationButton + ' ' + css.navigation[btnType]).trim();
-	}
-
 	function updateModel(newModel) {
 		model = newModel;
+	}
+
+	function doTrySaveAgain() {
+		model.doComplete();
 	}
 
 	onMount(() => {
@@ -135,7 +134,7 @@
 									<input
 										type="button"
 										value={model.getLocString('saveAgainButton')}
-										on:click={model.doComplete}
+										on:click={doTrySaveAgain}
 										class={css.saveData.saveAgainButton} />
 								{/if}
 							</div>
