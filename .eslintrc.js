@@ -1,4 +1,5 @@
 module.exports = {
+	ignorePatterns: ['testcafe/*.js'],
 	env: {
 		browser: true,
 		node: true,

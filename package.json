@@ -29,7 +29,8 @@
 		"sirv-cli": "1.0.5",
 		"start-server-and-test": "1.11.2",
 		"svelte": "3.24.0",
-		"svelte-preprocess": "4.0.9"
+		"svelte-preprocess": "4.0.9",
+		"testcafe": "1.9.4"
 	},
 	"files": [
 		"src/components",
@@ -65,6 +66,7 @@
 		"build": "rollup -c",
 		"cy:open": "cypress open",
 		"cy:run": "cypress run",
+		"testcafe": "testcafe chrome testCafe/",
 		"dev": "rollup -c -w",
 		"lint": "eslint --color --ignore-path .gitignore .",
 		"prepublishOnly": "npm run build",
@@ -74,7 +76,7 @@
 	"svelte": "src/components/Survey.svelte",
 	"version": "0.0.1",
 	"dependencies": {
-		"survey-core": "1.7.24"
+		"survey-core": "latest"
 	},
 	"author": "dmitrykurmanov"
 }
