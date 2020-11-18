@@ -16,6 +16,7 @@
 	<body>
 		<script src="survey-standalone.js"></script>
 		<div id="surveyElement"></div>
+		<div id="surveyResultElement"></div>
 
 		<script>
 			Survey.StylesManager.applyTheme('modern');
@@ -30,6 +31,7 @@
 								name: 'car',
 								title: 'What car are you driving?',
 								isRequired: true,
+								hasOther: true,
 								colCount: 4,
 								choices: [
 									'None',

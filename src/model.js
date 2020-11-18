@@ -10,27 +10,29 @@ StylesManager.applyTheme('modern');
 export class Model extends Core.SurveyModel {
 	constructor(json) {
 		super(json);
+		this.SurveyComponentInstance = null;
 	}
 
 	setPropertyValueCore(propertiesHash, name, val) {
 		super.setPropertyValueCore(propertiesHash, name, val);
 	}
 
-	render(targetNode) {
-		if (!targetNode) {
-			console.warn(
-				'surveyjs: please define target node for survey.render method'
-			);
-			return;
+	render(domNodeOrId) {
+		if (domNodeOrId && typeof domNodeOrId == 'string') {
+			domNodeOrId = document.getElementById(domNodeOrId);
 		}
+		this.startTimerFromUI();
 
-		new Survey({
-			target: targetNode,
+		if (!domNodeOrId) return;
+
+		if (this.SurveyComponentInstance)
+			this.SurveyComponentInstance.$destroy();
+
+		this.SurveyComponentInstance = new Survey({
+			target: domNodeOrId,
 			props: {
 				model: this,
 			},
 		});
-
-		this.onPropertyChanged.add(() => {});
 	}
 }
