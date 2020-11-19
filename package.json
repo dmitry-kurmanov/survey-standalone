@@ -33,7 +33,6 @@
 		"testcafe": "1.9.4"
 	},
 	"files": [
-		"src/components",
 		"dist"
 	],
 	"husky": {
@@ -42,7 +41,7 @@
 		}
 	},
 	"keywords": [
-		"svelte"
+		"svelte surveyjs"
 	],
 	"license": "MIT",
 	"lint-staged": {
@@ -55,8 +54,8 @@
 			"git add"
 		]
 	},
-	"main": "dist/index.min.js",
-	"module": "dist/index.min.mjs",
+	"main": "dist/survey-standalone.min.js",
+	"module": "dist/survey-standalone.min.mjs",
 	"name": "survey-standalone",
 	"repository": {
 		"type": "git",
