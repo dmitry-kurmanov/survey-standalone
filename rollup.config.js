@@ -10,6 +10,8 @@ import svelte from 'rollup-plugin-svelte';
 const production = !process.env.ROLLUP_WATCH;
 const name = 'Survey';
 
+const cssOutputPath = production ? 'dist/survey-standalone.css' : 'public/survey-standalone.css';
+
 export default {
 	input: 'src/index.js',
 	output: !production
@@ -43,7 +45,7 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: (css) => {
-				css.write('public/survey-standalone.css');
+				css.write(cssOutputPath);
 			},
 			/**
 			 * Auto preprocess supported languages with

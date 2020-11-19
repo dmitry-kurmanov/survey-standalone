@@ -54,10 +54,10 @@
 	});
 </script>
 
-<style lang="scss">
+<style lang="scss" global>
 	@import '../node_modules/survey-core/modern';
 
-	:global(.sjs-hide) {
+	.sjs-hide {
 		display: none;
 	}
 </style>
