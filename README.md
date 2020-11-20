@@ -1,6 +1,12 @@
 # 🔌 survey-standalone
 [SurveyJS](https://github.com/surveyjs/survey-library) library standalone implementation. It can be used with any framework or without any one.
 
+## advantages
+* framework agnostic
+
+## limitations
+This is my "side" hobby project and it doesn't contain all SurveyJS questions and features. If you want to add some functionality form the SurveyJS feel free to create an issue here.
+
 ## examples
 * script tag (no framework): https://plnkr.co/edit/mU5ct7cCCGrG4eNp
 * es vanilla (no framework): https://codesandbox.io/s/survey-standalone-vanilla-example-g0k31
