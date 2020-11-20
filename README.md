@@ -1,4 +1,4 @@
-# surveyjs-standalone
+# 🔌 surveyjs-standalone
 SurveyJS standalone implementation. It can be used with any framework or without any one.
 
 # demos
