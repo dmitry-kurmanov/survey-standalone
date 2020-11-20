@@ -5,7 +5,7 @@
 * framework agnostic
 
 ## limitations
-This is my "side" hobby project and it doesn't contain all SurveyJS questions and features. If you want to add some functionality form the SurveyJS feel free to create an issue here.
+This is my "side" hobby project and it doesn't contain all SurveyJS questions and features. If you want to add some functionality from the SurveyJS library feel free to create an issue here.
 
 ## examples
 * script tag (no framework): https://plnkr.co/edit/mU5ct7cCCGrG4eNp
