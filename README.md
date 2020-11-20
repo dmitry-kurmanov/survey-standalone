@@ -76,7 +76,7 @@ check the [SurveyJS documentation](https://surveyjs.io/Documentation/Library)
 * `npm install`
 * `npm run dev`
 
-# Thanks to
+## Thanks to
 [SurveyJS](https://surveyjs.io/)  
 [Svelte](https://github.com/sveltejs/svelte)  
 [Rollup](https://github.com/rollup/rollup)  
