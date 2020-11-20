@@ -1,11 +1,11 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import { getComponentByName } from '../../utils.js';
+	import { getElementByName } from './elements/_register.js';
 
 	export let element = null;
 	export let css = null;
 
-	$: dynamicComponent = getComponentByName(element.getTemplate());
+	$: dynamicElement = getElementByName(element.getTemplate());
 
 	let domNode = null;
 
@@ -24,6 +24,6 @@
 		</div>
 	{/if}
 	{#if element.customWidget.isDefaultRender}
-		<svelte:component this={dynamicComponent} {element} {css} />
+		<svelte:component this={dynamicElement} {element} {css} />
 	{/if}
 </div>

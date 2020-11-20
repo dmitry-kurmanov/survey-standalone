@@ -5,9 +5,9 @@
 	import ElementHeader from './ElementHeader.svelte';
 	import SurveyErrors from './Errors.svelte';
 	import OtherChoice from './OtherChoice.svelte';
-	import { getComponentByName } from '../utils.js';
+	import { getElementByName } from './elements/_register.js';
 
-	import customwidget from './elements/CustomWidget.svelte';
+	import customwidget from './CustomWidget.svelte';
 
 	export let element = null;
 	export let model = null;
@@ -19,9 +19,9 @@
 	$: hasErrorsOnBottom =
 		!element.isPanel && model.questionErrorLocation === 'bottom';
 
-	$: dynamicComponent = element.customWidget
+	$: dynamicElement = element.customWidget
 		? customwidget
-		: getComponentByName(element.getTemplate());
+		: getElementByName(element.getTemplate());
 
 	function getRootClass(element) {
 		let cssRoot = element.cssRoot;
@@ -103,7 +103,7 @@
 			<SurveyErrors {element} location="top" />
 		{/if}
 
-		<svelte:component this={dynamicComponent} {element} {css} />
+		<svelte:component this={dynamicElement} {element} {css} />
 
 		{#if element.hasComment}
 			<div class={element.cssClasses.formGroup}>

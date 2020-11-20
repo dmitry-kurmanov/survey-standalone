@@ -9,13 +9,9 @@
 
 	$: labelClass = element.getLabelClass(item);
 	$: controlLabelClass = element.getControlLabelClass(item);
-
-	function getItemClass(item) {
-		return element.getItemClass(item);
-	}
 </script>
 
-<div class={getItemClass(item)}>
+<div class={element.getItemClass(item)}>
 	<label class={labelClass}>
 		<input
 			type="radio"
