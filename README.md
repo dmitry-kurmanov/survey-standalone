@@ -6,6 +6,7 @@
 * es vanilla (no framework): https://codesandbox.io/s/survey-standalone-vanilla-example-g0k31
 * Svelte: https://codesandbox.io/s/survey-standalone-svelte-example-sis80
 * React: https://codesandbox.io/s/survey-standalone-react-example-34081
+* Vue: https://codesandbox.io/s/survey-standalone-vue-example-zdcnr
 
 # Thanks to
 [SurveyJS](https://surveyjs.io/)  
