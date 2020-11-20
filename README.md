@@ -62,6 +62,13 @@ window.survey = new Survey.Survey(json);
 survey.showProgressBar = 'top';
 survey.render(targetNode);
 ```
+## api docs
+check the [SurveyJS documentation](https://surveyjs.io/Documentation/Library)
+
+## build
+* `git clone https://github.com/dmitrykurmanov/survey-standalone.git`
+* `npm install`
+* `npm run dev`
 
 # Thanks to
 [SurveyJS](https://surveyjs.io/)  
