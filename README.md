@@ -7,6 +7,7 @@
 * Svelte: https://codesandbox.io/s/survey-standalone-svelte-example-sis80
 * React: https://codesandbox.io/s/survey-standalone-react-example-34081
 * Vue: https://codesandbox.io/s/survey-standalone-vue-example-zdcnr
+* Angular: https://codesandbox.io/s/survey-standalone-angular-example-2x4c6
 
 # Thanks to
 [SurveyJS](https://surveyjs.io/)  
