@@ -78,6 +78,6 @@ check the [SurveyJS documentation](https://surveyjs.io/Documentation/Library)
 
 # Thanks to
 [SurveyJS](https://surveyjs.io/)  
-[SvelteJS](https://github.com/sveltejs/svelte)  
-[RollupJS](https://github.com/rollup/rollup)  
+[Svelte](https://github.com/sveltejs/svelte)  
+[Rollup](https://github.com/rollup/rollup)  
 [YogliB](https://github.com/YogliB/svelte-component-template)
