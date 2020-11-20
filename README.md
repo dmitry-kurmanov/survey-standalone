@@ -1,7 +1,7 @@
 # surveyjs-standalone
 SurveyJS standalone implementation. It can be used with any framework or without any one.
 
-# demo
+# demos
 * ES5 script tag: https://plnkr.co/edit/mU5ct7cCCGrG4eNp
 * Svelte: https://codesandbox.io/s/survey-standalone-svelte-example-sis80
 * React: https://codesandbox.io/s/survey-standalone-react-example-34081
