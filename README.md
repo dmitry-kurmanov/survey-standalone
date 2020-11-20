@@ -1,5 +1,5 @@
 # 🔌 surveyjs-standalone
-[SurveyJS](https://github.com/surveyjs/survey-library) standalone implementation. It can be used with any framework or without any one.
+[SurveyJS](https://github.com/surveyjs/survey-library) library standalone implementation. It can be used with any framework or without any one.
 
 # examples
 * script tag (no framework): https://plnkr.co/edit/mU5ct7cCCGrG4eNp
