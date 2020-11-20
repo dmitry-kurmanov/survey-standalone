@@ -20,45 +20,47 @@
 
 ## usage
 ```html
-<div id="container" class="rating-container"></div>
+<div id="surveyElement"></div>
 ```
 
 ```js
-const rating = new WW_Rating({
-  target: document.querySelector("#container"),
-  props: {
-    title: "Rate your health",
-    name: "health",
-    icon: "star",
-    value: 3,
-    items: [
-      {
-        value: 1,
-        text: "very bad"
-      },
-      {
-        value: 2,
-        text: "bad"
-      },
-      {
-        value: 3,
-        text: "normal"
-      },
-      {
-        value: 4,
-        text: "good"
-      },
-      {
-        value: 5,
-        text: "exelent"
-      }
-    ]
-  }
-});
+Survey.StylesManager.applyTheme('modern');
 
-rating.title = "My New Title";
+var json = {
+  title: 'Survey standalone example !',
+  pages: [
+    {
+      questions: [
+        {
+          type: 'radiogroup',
+          name: 'car',
+          title: 'What car are you driving?',
+          isRequired: true,
+          hasOther: true,
+          colCount: 4,
+          choices: [
+            'None',
+            'Ford',
+            'Vauxhall',
+            'Volkswagen',
+            'Nissan',
+            'Audi',
+            'Mercedes-Benz',
+            'BMW',
+            'Peugeot',
+            'Toyota',
+            'Citroen',
+          ],
+        },
+      ],
+    }
+  ],
+};
 
-console.log(rating.value);
+var targetNode = document.querySelector('#surveyElement');
+window.survey = new Survey.Survey(json);
+survey.showProgressBar = 'top';
+survey.render(targetNode);
 ```
 
 # Thanks to
