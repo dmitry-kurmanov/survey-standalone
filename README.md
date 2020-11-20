@@ -3,6 +3,7 @@
 
 # examples
 * script tag (no framework): https://plnkr.co/edit/mU5ct7cCCGrG4eNp
+* es vanilla (no framework): https://codesandbox.io/s/survey-standalone-vanilla-example-g0k31
 * Svelte: https://codesandbox.io/s/survey-standalone-svelte-example-sis80
 * React: https://codesandbox.io/s/survey-standalone-react-example-34081
 
