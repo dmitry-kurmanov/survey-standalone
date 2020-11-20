@@ -32,7 +32,7 @@ This is my "side" hobby project and it doesn't contain all SurveyJS questions an
 ```js
 Survey.StylesManager.applyTheme('modern');
 
-var json = {
+const json = {
   title: 'Survey standalone example !',
   pages: [
     {
@@ -63,8 +63,8 @@ var json = {
   ],
 };
 
-var targetNode = document.querySelector('#surveyElement');
-window.survey = new Survey.Survey(json);
+const targetNode = document.querySelector('#surveyElement');
+window.survey = new Survey(json);
 survey.showProgressBar = 'top';
 survey.render(targetNode);
 ```
