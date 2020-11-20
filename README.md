@@ -1,5 +1,5 @@
 # surveyjs-standalone
-SurveyJS standalone implementation
+SurveyJS standalone implementation. It can be used with any framework or without any one.
 
 # demo
 * ES5 script tag: https://plnkr.co/edit/mU5ct7cCCGrG4eNp
