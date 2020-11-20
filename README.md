@@ -2,7 +2,7 @@
 [SurveyJS](https://github.com/surveyjs/survey-library) standalone implementation. It can be used with any framework or without any one.
 
 # examples
-* ES5 script tag: https://plnkr.co/edit/mU5ct7cCCGrG4eNp
+* script tag (no framework): https://plnkr.co/edit/mU5ct7cCCGrG4eNp
 * Svelte: https://codesandbox.io/s/survey-standalone-svelte-example-sis80
 * React: https://codesandbox.io/s/survey-standalone-react-example-34081
 
