@@ -2,7 +2,7 @@
 SurveyJS standalone implementation
 
 # demo
-[ES5 (script tag)](https://plnkr.co/edit/mU5ct7cCCGrG4eNp)
+* ES5 script tag: https://plnkr.co/edit/mU5ct7cCCGrG4eNp
 
 # Thanks to
 [SvelteJS](https://github.com/sveltejs/svelte)  
