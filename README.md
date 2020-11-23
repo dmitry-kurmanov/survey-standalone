@@ -1,5 +1,5 @@
 # 🔌 survey-standalone
-[SurveyJS](https://github.com/surveyjs/survey-library) library standalone implementation. It can be used with any framework or without any one.
+[SurveyJS](https://github.com/surveyjs/survey-library) is a modern way to add surveys and forms to your website. It has versions for angular2+, jQuery, knockout, react and vue frameworks. This is standalone implementation of SurveyJS library. It can be used with any framework or without any one.
 
 ## advantages
 * framework agnostic
