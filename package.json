@@ -30,7 +30,7 @@
 		"start-server-and-test": "1.11.2",
 		"svelte": "3.24.0",
 		"svelte-preprocess": "4.0.9",
-		"testcafe": "1.9.4"
+		"testcafe": "1.20.1"
 	},
 	"files": [
 		"dist"
